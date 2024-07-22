@@ -28,6 +28,13 @@ environment:
 # the latest version available on pub.dev. To see which dependencies have newer
 # versions available, run `flutter pub outdated`.
 dependencies:
+  arcore_flutter_plugin: 
+    git:
+      url: https://github.com/giandifra/arcore_flutter_plugin.git
+      ref: master
+  auto_route: ^8.3.0
+  avatar_view: ^1.0.1
+  bloc_concurrency: ^0.2.5
   connectivity_plus: ^6.0.3
   cupertino_icons: ^1.0.6
   dio: ^5.5.0+1
@@ -35,12 +42,19 @@ dependencies:
   flutter:
     sdk: flutter
   flutter_bloc: ^8.1.6
+  fpdart: ^1.1.0
   get_it: ^7.7.0
+  http: ^1.2.1
+  image_picker: ^1.1.2
   injectable: ^2.4.2
+  page_transition: ^2.1.0
   pretty_dio_logger: ^1.3.1
+  provider: ^6.1.2
   retrofit: ^4.1.0
+  stream_transform: ^2.1.0
 
 dev_dependencies:
+  auto_route_generator: ^8.1.0
   build_runner: ^2.4.11
   flutter_lints: ^3.0.0
   flutter_test:
@@ -59,8 +73,8 @@ flutter:
   # the material Icons class.
   uses-material-design: true
   # To add assets to your application, add an assets section, like this:
-  # assets:
-  #   - images/a_dot_burr.jpeg
+  assets:
+    - assets/fox_face_mesh_texture.png
   #   - images/a_dot_ham.jpeg
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware

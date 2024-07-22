@@ -23,14 +23,20 @@ if (flutterVersionName == null) {
     flutterVersionName = "1.0"
 }
 
+
+
+
 android {
     namespace = "com.example.flutter_healtcare"
-    compileSdk = flutter.compileSdkVersion
+    compileSdk = 34
     ndkVersion = flutter.ndkVersion
 
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_1_8
         targetCompatibility = JavaVersion.VERSION_1_8
+    }
+    lintOptions {
+        disable 'InvalidPackage'
     }
 
     defaultConfig {
@@ -38,17 +44,19 @@ android {
         applicationId = "com.example.flutter_healtcare"
         // You can update the following values to match your application needs.
         // For more information, see: https://docs.flutter.dev/deployment/android#reviewing-the-gradle-build-configuration.
-        minSdk = flutter.minSdkVersion
+        minSdk = 24
         targetSdk = flutter.targetSdkVersion
         versionCode = flutterVersionCode.toInteger()
         versionName = flutterVersionName
+        multiDexEnabled true
     }
 
     buildTypes {
-        release {
+        debug {
             // TODO: Add your own signing config for the release build.
             // Signing with the debug keys for now, so `flutter run --release` works.
-            signingConfig = signingConfigs.debug
+            signingConfig signingConfigs.debug
+
         }
     }
 }
@@ -56,3 +64,36 @@ android {
 flutter {
     source = "../.."
 }
+
+// dependencies {
+//      implementation 'com.google.ar:core:1.15.0'
+
+//     // // Provides ArFragment, and other UX resources.
+//     implementation 'com.google.ar.sceneform.ux:sceneform-ux:1.15.0'
+
+//     // // Alternatively, use ArSceneView without the UX dependency.
+//     implementation 'com.google.ar.sceneform:core:1.15.0'
+// }
+
+
+// sceneform.asset('sampledata/Andy.obj',
+//         'default',
+//         'sampledata/Andy.sfa',
+//         'src/main/assets/andy')
+
+// sceneform.asset('sampledata/TocoToucan.obj',
+//         'default',
+//         'sampledata/TocoToucan.sfa',
+//         'src/main/assets/toucan')
+
+// sceneform.asset('sampledata/ArcticFox_Posed.obj',
+//         'default',
+//         'sampledata/ArcticFox_Posed.sfa',
+//         'src/main/assets/artic_fox')
+
+// sceneform.asset('sampledata/fox_face.fbx',
+//         'sampledata/fox_face_material.mat',
+//         'sampledata/fox_face.sfa',
+//         'src/main/assets/fox_face')
+
+
